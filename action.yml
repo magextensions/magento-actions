@@ -25,7 +25,7 @@ inputs:
     default: 'Magento2'
 runs:
   using: 'docker'
-  image: 'docker://mad1t/magento-actions:latest1'
+  image: 'Dockerfile'
 branding:
   icon: 'arrow-up-circle'
   color: 'blue'
