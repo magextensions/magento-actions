@@ -75,6 +75,9 @@ RUN curl -LO https://getcomposer.org/composer-stable.phar \
     && chmod +x ./composer.phar \
     && mv ./composer.phar /usr/local/bin/composer
 
+#Composer back to version 1
+RUN composer selfupdate --1
+
 #CMD ["/bin/bash"]
 
 
