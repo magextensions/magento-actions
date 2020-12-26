@@ -12,7 +12,6 @@ RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.
 RUN apt-get -y update \
     && apt-get -y install \
     git \
-    npm \
     curl \
     php7.1-cli \
     php7.1-curl \
@@ -78,6 +77,13 @@ RUN curl -LO https://getcomposer.org/composer-stable.phar \
 
 #Composer back to version 1
 RUN composer selfupdate --1
+
+# Add node 10.x repository
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+# apt-get update is called by node setup script already
+RUN apt-get install --no-install-recommends -y \
+    nodejs
 
 #Install Megapack
 RUN apt-get update \
