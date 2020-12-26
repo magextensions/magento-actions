@@ -12,6 +12,7 @@ RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.
 RUN apt-get -y update \
     && apt-get -y install \
     git \
+    npm \
     curl \
     php7.1-cli \
     php7.1-curl \
