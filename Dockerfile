@@ -60,6 +60,7 @@ RUN apt-get -y update \
     php7.4-soap \
     php7.4-bcmath \
     zip \
+    symlinks \
     mysql-client \
     && apt-get clean \
     && rm -rf \
