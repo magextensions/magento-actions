@@ -97,6 +97,19 @@ RUN apt-get update \
 RUN npm install -g magepack --unsafe-perm=true --allow-root
 #End Install Megapack
 
+#Install Yarn
+# Add yarn repository
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+# Add node 10.x repository
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+# apt-get update is called by node setup script already
+RUN apt-get install --no-install-recommends -y \
+    nodejs \
+    yarn
+#End install yarn
+
 #CMD ["/bin/bash"]
 
 
