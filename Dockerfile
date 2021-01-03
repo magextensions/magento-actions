@@ -110,6 +110,8 @@ RUN apt-get install --no-install-recommends -y \
     yarn
 #End install yarn
 
+RUN npm install -g gulp
+
 #CMD ["/bin/bash"]
 
 
